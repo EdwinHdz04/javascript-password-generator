@@ -26,29 +26,30 @@ function generatePassword(){
 
 // I am presented with a series of prompts for password criteria
 // prompted for password criteria
+function GetPrompts() {
+  characterLength = parseInt(prompt ("How man charactares do you want your password to be? (8 - 128 characters"));
 
+  if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
+    alert("Character Length has to be a number, 8 - 128 digits. TRY AGAIN.");
+    return false;
+  }
+  if (comfirm("Would you like lowercase letters in your password?")) {
+    choiceArr = choiceArr.concat(lowerCassArr);
+  }
+  if (comfirm("Would you like uppercase letters in your password?")) {
+    choiceArr = choiceArr.concat(uppercaseArr);
+  }
+  if (comfirm("Would you like special characters in your password?")) {
+    choiceArr = choiceArr.concat(specialCharArr);
+  }
+  if (confirm("Would you like mnumbers in your password?")) {
+    choiceArr = choiceArr.concat(numberArr);
+  }
+  return true;
+  
+}
 
  
-function getPrompts(){
-
-    characterLength = parseInt(prompt("How many characters would you want your password be?" ('8 - 128 characters'))
-
-    if (isNaN(characterLength) || characterLength < 8 || characterLength> 128 ){
-       alert('Character lenght has to be a number, 8 - 128 digits. TRY AGAIN.');
-       return false;
-    }
-     if (comfirm("would you like lowercase letters?' )in your password")){
-         choiceArr = choiceArr.concat(lowerCassArr);}
-
-     if (comfirm("would you like uppercase letters?' )in your password")){
-        choiceArr = choiceArr.concat(uppercaseArr);
-    }
-     if (comfirm("would you like numbers in your password)")){
-        choiceArr = choiceArr.concat(numberArr);
-     }
-     return true;
-
- }
 
 
 // I select which criteria to include in the password
