@@ -24,16 +24,31 @@ function generatePassword(){
    return "Generated password"
  }
 
- function getPrompts(){
-   characterLength = parseInt(prompt("How many characters would you want your password be?" ('8 - 128 characters'))
-
-    if(isNaN(characterLength)|| characterLength <8 || characterLength > 128 ){
-       alert('Character lenght has to be a number, 8 -128 digits. TRY AGAIN.');
-       return false;
-    }
- }
 // I am presented with a series of prompts for password criteria
 // prompted for password criteria
+
+
+ 
+function getPrompts(){
+
+    characterLength = parseInt(prompt("How many characters would you want your password be?" ('8 - 128 characters'))
+
+    if (isNaN(characterLength) || characterLength < 8 || characterLength> 128 ){
+       alert('Character lenght has to be a number, 8 - 128 digits. TRY AGAIN.');
+       return false;
+    }
+     if (comfirm("would you like lowercase letters?' )in your password")){
+         choiceArr = choiceArr.concat(lowerCassArr);}
+
+     if (comfirm("would you like uppercase letters?' )in your password")){
+        choiceArr = choiceArr.concat(uppercaseArr);
+    }
+     if (comfirm("would you like numbers in your password)")){
+        choiceArr = choiceArr.concat(numberArr);
+     }
+     return true;
+
+ }
 
 
 // I select which criteria to include in the password
