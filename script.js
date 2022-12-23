@@ -23,8 +23,6 @@ function writePassword() {
   if (correctPrompts) { 
     var newPassword = generatePassword();
     passwordText.value = newPassword;
-    
-
   }
 }
 
@@ -33,15 +31,17 @@ function generatePassword(){
 
   var password = "";
   for(var i = 0; i < characterLength; i++) {
-    var randomIndex = (Math.floor.random() * choiceArr.length);
+    var randomIndex = Math.floor(Math.random() * choiceArr.length);
     password = password + choiceArr[randomIndex];
-  }
+  }// the password is generated
   return password;
   }
    
 
 // I am presented with a series of prompts for password criteria
 // prompted for password criteria
+// I answer each prompt
+// I select which criteria to include in the password
 function GetPrompts() {
   choiceArr = [];
   characterLength = parseInt(prompt ("How man characters do you want your password to be? (8 - 128 characters"));
@@ -49,13 +49,13 @@ function GetPrompts() {
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("Character Length has to be a number, 8 - 128 digits. TRY AGAIN.");
     return false;
-  }
+  }// I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
   if (confirm("Would you like lowercase letters in your password?")) {
     choiceArr = choiceArr.concat(lowerCassArr);
   }
   if (confirm("Would you like uppercase letters in your password?")) {
     choiceArr = choiceArr.concat(uppercaseArr);
-  }
+  }// asked for character types to include in the password
   if (confirm("Would you like special characters in your password?")) {
     choiceArr = choiceArr.concat(specialCharArr);
   }
@@ -67,16 +67,13 @@ function GetPrompts() {
 }
 
  
-// I select which criteria to include in the password
-// I choose a length of at least 8 characters and no more than 128 characters
-// asked for character types to include in the password
-// I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-// I answer each prompt
-// my input should be validated and at least one character type should be selected
-// all prompts are answered
-// a password is generated that matches the selected criteria
-// the password is generated
-// the password is either displayed in an alert or written to the page
+
+
+
+
+
+
+
 
 
 
